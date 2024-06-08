@@ -1,0 +1,30 @@
+nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+}
+header{
+    background-color: darkred;
+}
+ul{
+    display: flex;
+    list-style: none;
+}
+li{
+    margin-left: 15px;
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+h1{
+    font-family: "Oleo Script", sans-serif;
+    color:white;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+a:hover{
+    border-bottom: 2px solid black;
+    scale:1.1;
+    transition: 2s;
+}
