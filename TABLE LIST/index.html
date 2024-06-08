@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=table, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            margin-left: auto;
+            margin-right: auto;
+            width: 50vw;
+        }
+        input{
+            font-size: 25px;
+            width:95%;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <form>
+        <br><br><br><br>
+    <table border="3">
+        <tr>
+            <th colspan="2" style="font-size: 25px;color:red;">DATA ENTRY</th>
+        </tr>
+        
+        <tr>
+            <th>Name</th>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <th>Age</th>
+            <td><input type="number" id="age"></td>
+        </tr>
+        <tr>
+            <th colspan="2"><Button type="button" onclick="data_entry()">SUBMIT</Button></th>
+        </tr>
+    </table>
+    </form>
+    <br><br><br><br><br>
+    <table border="3" id="tb2">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Action</th>
+        </tr>
+        
+    </table>
+    <h4>TOTAL:</h4>
+</div>
+
+<script>
+    var name1=document.getElementById("name");
+    var age=document.getElementById("age");
+    var tb2=document.getElementById("tb2");
+    var counter=-1;
+    function to_delete(event){
+ event.target.parentElement.remove();
+    }
+    function data_entry(){
+        // alert(n1.value);
+        var trow=document.createElement("tr");
+        trow.innerHTML=`<td>${name1.value}</td>
+        <td class="c">${age.value}</td>
+        <td onclick="to_delete(event)" style="background-color:red;border-radius:10px;text-align:center;color:white;font-weight:bold;">DELETE</td>
+        `
+        tb2.appendChild(trow);
+        counter=counter+1;
+        add_value();
+    }
+    var value1=0;
+    function add_value(){
+        value1+=parseInt(document.querySelectorAll(".c")[counter].innerHTML);
+        document.querySelector("h4").innerHTML=value1;
+    }
+</script>
+</body>
+</html>
