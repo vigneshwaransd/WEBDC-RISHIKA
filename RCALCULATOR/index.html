@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="container">
+    <form>
+      <div>
+      <input type="text" readonly>
+      </div>
+  <div>
+    <button type="button" onclick="add('+')">+</button>
+     <button type="button" onclick="add('7')">7</button>
+     <button type="button" onclick="add('8')">8</button>
+     <button type="button" onclick="add('9')">9</button>
+  </div>
+      <div>
+         <button type="button" onclick="add('-')">-</button>
+         <button type="button" onclick="add('4')">4</button>
+         <button type="button" onclick="add('5')">5</button>
+         <button type="button" onclick="add('6')">6</button>
+      </div>
+      <div>
+         <button type="button" onclick="add('*')">*</button>
+         <button type="button" onclick="add('1')">1</button>
+         <button type="button" onclick="add('2')">2</button>
+         <button type="button" onclick="add('3')">3</button>
+      </div>
+      <div>
+         <button type="button" onclick="add('/')">/</button>
+         <button type="button" onclick="add('0')">0</button>
+         <button type="button" onclick="add('.')">.</button>
+         <button type="button" onclick="answer()">=</button>
+      </div>
+      <div>
+        <button type="button" onclick="clearVal()" style="width: 20vw; border-radius: 10px;">Clear</button>
+      </div>
+    </form>
+  </div>
+  <script>
+
+    function add(a){
+      document.querySelector("input").value= document.querySelector("input").value+a;
+      
+    }
+    function clearVal(){
+      document.querySelector("input").value=" ";
+    }
+    function answer(){
+      var output=eval(document.querySelector("input").value);
+      document.querySelector("input").value=output;
+      
+    }
+  </script>
+</body>
+
+</html>
